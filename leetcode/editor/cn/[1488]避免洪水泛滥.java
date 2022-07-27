@@ -66,7 +66,7 @@
 // 0 <= rains[i] <= 10⁹ 
 // 
 // Related Topics 贪心 数组 哈希表 二分查找 堆（优先队列） 👍 97 👎 0
-package editor.cn
+package editor.cn;
 
 import java.util.Arrays;
 import java.util.HashMap;
