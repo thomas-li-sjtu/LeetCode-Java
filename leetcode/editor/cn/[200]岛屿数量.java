@@ -54,7 +54,7 @@ class Solution200 {
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
-                if(grid[i][j] == '1') {
+                if (grid[i][j] == '1') {
                     res += 1;
 
                     Deque<List<Integer>> queue = new LinkedList<>();
@@ -69,12 +69,12 @@ class Solution200 {
                             if (
                                     0 <= row + cur[0] && row + cur[0] < grid.length &&
                                             0 <= column + cur[1] && column + cur[1] < grid[0].length &&
-                                            grid[row+cur[0]][column+cur[1]] == '1' &&
-                                            !visited.contains(Arrays.asList(row+cur[0], column+cur[1]))
+                                            grid[row + cur[0]][column + cur[1]] == '1' &&
+                                            !visited.contains(Arrays.asList(row + cur[0], column + cur[1]))
                             ) {
-                                grid[row+cur[0]][column+cur[1]] = '0';
-                                queue.addLast(Arrays.asList(row+cur[0], column+cur[1]));
-                                visited.add(Arrays.asList(row+cur[0], column+cur[1]));
+                                grid[row + cur[0]][column + cur[1]] = '0';
+                                queue.addLast(Arrays.asList(row + cur[0], column + cur[1]));
+                                visited.add(Arrays.asList(row + cur[0], column + cur[1]));
                             }
                         }
                     }
