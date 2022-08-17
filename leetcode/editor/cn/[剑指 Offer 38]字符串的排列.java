@@ -20,6 +20,9 @@
 // Related Topics 字符串 回溯 👍 600 👎 0
 
 
+//leetcode submit region begin(Prohibit modification and deletion)
+package editor.cn;
+
 import com.sun.deploy.util.StringUtils;
 
 import java.util.ArrayList;
@@ -27,8 +30,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solutionoffer38 {
     private HashSet<String> curList;
 
     public String[] permutation(String s) {
@@ -47,7 +49,7 @@ class Solution {
             curRes[i] = curRes[start];
             curRes[start] = temp;
 
-            back(start+1, curRes.clone());
+            back(start + 1, curRes.clone());
 
             temp = curRes[i];
             curRes[i] = curRes[start];
