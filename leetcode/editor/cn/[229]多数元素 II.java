@@ -96,10 +96,10 @@ class Solution229 {
             else if (b == num) cn_b++;
         }
 
-        if (cn_a > nums.length/3) {
+        if (cn_a > nums.length / 3) {
             res.add(a);
         }
-        if (cn_b > nums.length/3 && a != b) {
+        if (cn_b > nums.length / 3 && a != b) {
             res.add(b);
         }
         return res;

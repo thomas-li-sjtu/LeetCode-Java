@@ -59,9 +59,9 @@ import java.util.List;
 class Solution31 {
     public void nextPermutation(int[] nums) {
         int a = -1, b = -1;  //a: 从后往前，第一个不是倒序的数字下标；b：a以后，比a大的最小数下标
-        for (int i = nums.length-1; i >= 1; i--) {
-            if (nums[i-1] < nums[i]) {
-                a = i-1;
+        for (int i = nums.length - 1; i >= 1; i--) {
+            if (nums[i - 1] < nums[i]) {
+                a = i - 1;
                 break;
             }
         }
@@ -78,10 +78,10 @@ class Solution31 {
             }
         } else {
             int gap = 1000;
-            for (int i = a+1; i < nums.length; i++) {
+            for (int i = a + 1; i < nums.length; i++) {
                 if (nums[i] > nums[a]) {
-                    if (gap >= nums[i]-nums[a]) {
-                        gap = nums[i]-nums[a];
+                    if (gap >= nums[i] - nums[a]) {
+                        gap = nums[i] - nums[a];
                         b = i;
                     }
                 } else {
@@ -96,14 +96,14 @@ class Solution31 {
             nums[b] = temp;
             // a后面倒序
             List<Integer> arraylist = new ArrayList<>();
-            for (int i = a+1; i < nums.length; i++) {
+            for (int i = a + 1; i < nums.length; i++) {
                 arraylist.add(nums[i]); //存放元素
             }
             Collections.reverse(arraylist); //使用方法进行逆序
             System.out.println(arraylist.toString());
             //完成逆序后,可以保存到新数组reverseArray
-            for (int i = a+1; i < nums.length; i++) {
-                nums[i] = arraylist.get(i-(a+1));
+            for (int i = a + 1; i < nums.length; i++) {
+                nums[i] = arraylist.get(i - (a + 1));
             }
         }
     }

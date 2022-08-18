@@ -45,7 +45,7 @@ package editor.cn;
 class Solution275 {
     public int hIndex(int[] citations) {
         // 找一个数x，使得数组中大于等于x的值有x个
-        int left = 0, right = citations[citations.length-1];
+        int left = 0, right = citations[citations.length - 1];
 
         while (left < right) {
             int mid = (left + right) / 2;
@@ -60,7 +60,7 @@ class Solution275 {
     }
 
     public boolean check(int target, int[] citations) {
-        int left = 0, right = citations.length-1;
+        int left = 0, right = citations.length - 1;
 
         while (left < right) {
             int mid = (left + right) / 2;
@@ -70,7 +70,7 @@ class Solution275 {
                 right = mid;
             }
         }
-        return citations.length-left > target;
+        return citations.length - left > target;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
