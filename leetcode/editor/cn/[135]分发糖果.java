@@ -39,7 +39,6 @@
 // Related Topics 贪心 数组 👍 933 👎 0
 
 
-
 //leetcode submit region begin(Prohibit modification and deletion)
 package editor.cn;
 
@@ -60,15 +59,15 @@ class Solution135 {
         }
 
         for (int i = 1; i < ratings.length; i++) {
-            if (ratings[i] > ratings[i-1]) {
-                res.set(i, res.get(i-1)+1);
+            if (ratings[i] > ratings[i - 1]) {
+                res.set(i, res.get(i - 1) + 1);
             }
         }
 
 
-        for (int i = ratings.length-2; i >= 0; i--) {
-            if (ratings[i] > ratings[i+1]) {
-                res.set(i, Math.max(res.get(i+1)+1, res.get(i)));
+        for (int i = ratings.length - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                res.set(i, Math.max(res.get(i + 1) + 1, res.get(i)));
             }
         }
 
