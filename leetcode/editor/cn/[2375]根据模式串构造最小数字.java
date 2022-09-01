@@ -51,22 +51,55 @@ package editor.cn;
 import java.util.*;
 
 class Solution2375 {
+    // 方法2：贪心
     public String smallestNumber(String pattern) {
-        StringBuilder res = new StringBuilder();
-        pattern += "I";
-        int len = pattern.length();
-        Deque<Integer> que = new LinkedList<>();
-        for (int i = 1; i <= len; i++) {
-            if (pattern.charAt(i - 1) == 'D') {
-                que.offerLast(i);
+        StringBuilder res = new StringBuilder("123456789");
+
+        int i = 0;
+        int j = 0;
+
+        while (j < pattern.length()) {
+            if (pattern.charAt(j) == 'I' && i == j) {
+                i++;
+                j++;
+            } else if (pattern.charAt(j) == 'D' && i == j) {
+                j++;
+            } else if (pattern.charAt(j) == 'D' && i != j) {
+                j++;
             } else {
-                res.append(i);
-                while (que.size() != 0) {
-                    res.append(que.pollLast());
-                }
+                StringBuilder curString = new StringBuilder(res.substring(i, j + 1));
+                curString.reverse();
+                res.replace(i, j + 1, curString.toString());
+                i = j;
+                i++;
+                j++;
             }
         }
-        return res.toString();
+        if (i != j) {
+            StringBuilder curString = new StringBuilder(res.substring(i, j + 1));
+            curString.reverse();
+            res.replace(i, j + 1, curString.toString());
+        }
+
+        return res.substring(0, pattern.length() + 1);
     }
+    // 方法一：栈
+//    public String smallestNumber(String pattern) {
+//        StringBuilder res = new StringBuilder();
+//        pattern += "I";
+//        int len = pattern.length();
+//        Deque<Integer> que = new LinkedList<>();
+//        for (int i = 1; i <= len; i++) {
+//            if (pattern.charAt(i - 1) == 'D') {
+//                que.offerLast(i);
+//            } else {
+//                res.append(i);
+//                while (que.size() != 0) {
+//                    res.append(que.pollLast());
+//                }
+//            }
+//        }
+//        return res.toString();
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
