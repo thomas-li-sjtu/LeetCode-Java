@@ -57,7 +57,7 @@ class Solution2374 {
         }
 
         long max_num = -1;
-        for (long i: counter) {
+        for (long i : counter) {
             max_num = Math.max(i, max_num);
         }
 
