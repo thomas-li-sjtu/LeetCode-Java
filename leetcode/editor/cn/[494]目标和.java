@@ -44,6 +44,8 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+package editor.cn;
+
 class Solution494 {
     public int findTargetSumWays(int[] nums, int target) {
         // 找到nums的一个子集 P，使得sum(P) = (target + sum(nums)) / 2
@@ -69,7 +71,6 @@ class Solution494 {
             }
         }
         return dp[nums.length][target];
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
